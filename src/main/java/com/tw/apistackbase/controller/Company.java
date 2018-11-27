@@ -5,10 +5,7 @@ import java.util.List;
 
 
 public class Company {
-
-
-
-
+    private List<Company> companies;
     private String companyName;
     private Integer employeesNumber;
     private List<Employee> employees;
@@ -19,7 +16,10 @@ public class Company {
     }
 
 
-    public Company(String name, Integer employeesNumber, List<Employee> employees) {
+
+
+    public Company(List<Company> companies, String companyName, Integer employeesNumber, List<Employee> employees) {
+        this.companies = companies;
         this.companyName = companyName;
         this.employeesNumber = employeesNumber;
         this.employees = employees;
@@ -36,6 +36,14 @@ public class Company {
 
     public List<Employee> getEmployees() {
         return employees;
+    }
+
+    public List<Company> getCompanies() {
+        return companies;
+    }
+
+    public void setCompanies(List<Company> companies) {
+        this.companies = companies;
     }
 
     public void setCompanyName(String companyName) {
