@@ -1,4 +1,4 @@
-package com.tw.apistackbase.controller;
+package com.tw.apistackbase.object;
 
 public class Employee {
     private Integer id;

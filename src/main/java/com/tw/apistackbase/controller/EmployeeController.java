@@ -1,11 +1,12 @@
 package com.tw.apistackbase.controller;
 
+import com.tw.apistackbase.object.Employee;
+import com.tw.apistackbase.service.EmpolyeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("employees")
@@ -25,7 +26,8 @@ public class EmployeeController {
 
     @PostMapping(produces = {"application/json"})
     public ResponseEntity<Employee> create(@RequestBody Employee employee){
-        return ResponseEntity.ok(empolyeeService.create(employee));
+
+      return ResponseEntity.ok(empolyeeService.create(employee));
     }
 
     @PutMapping(path = "/{id}", produces = {"application/json"})
@@ -36,6 +38,11 @@ public class EmployeeController {
     @DeleteMapping(path = "/{id}", produces = {"application/json"})
     public ResponseEntity<Employee> delete(@PathVariable Integer id){
         return ResponseEntity.ok(empolyeeService.delete(id));
+    }
+
+    @GetMapping(path = "/{id}", produces = {"application/json"})
+    public ResponseEntity<Employee> getSpecific(@PathVariable Integer id){
+        return ResponseEntity.ok(empolyeeService.getSpecific(id));
     }
 
 

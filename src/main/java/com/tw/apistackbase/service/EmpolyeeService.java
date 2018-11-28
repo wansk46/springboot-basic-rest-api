@@ -1,5 +1,6 @@
-package com.tw.apistackbase.controller;
+package com.tw.apistackbase.service;
 
+import com.tw.apistackbase.object.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -33,6 +34,14 @@ public class EmpolyeeService {
 
     public Employee delete (Integer id){
         return employees.remove(id);
+    }
+
+    public Employee getSpecific(Integer id){
+        return employees.get( id );
+    }
+
+    public Employee getGender (){
+        return employees.
     }
 
 
